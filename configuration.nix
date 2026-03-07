@@ -9,7 +9,7 @@
 
 {
   environment.systemPackages = builtins.attrValues {
-    inherit (pkgs) curl wget jq tailscale git;
+    inherit (pkgs) curl wget jq tailscale git uv nixfmt nil;
   };
 
   programs.neovim = {
