@@ -8,6 +8,7 @@
         inherit (pkgs)
           curl
           git
+          gnumake
           jq
           nil
           nixfmt
