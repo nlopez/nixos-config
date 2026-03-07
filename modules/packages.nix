@@ -7,14 +7,21 @@
       environment.systemPackages = builtins.attrValues {
         inherit (pkgs)
           curl
+          fd
           git
           gnumake
+          htop
           jq
-          nil
+          nil # nix language server
           nixfmt
+          ripgrep
           tailscale
+          trash-cli
+          tree
           uv
           wget
+          yq
+          zsh-z
           ;
       };
 
@@ -23,6 +30,10 @@
         defaultEditor = true;
         viAlias = true;
         vimAlias = true;
+      };
+
+      programs.tmux = {
+        enable = true;
       };
 
       # https://nix-community.github.io/NixOS-WSL/how-to/vscode.html

@@ -1,0 +1,14 @@
+{
+  "chat.tools.terminal.autoApprove": {
+    "nix flake show": true,
+  },
+  "nix.serverSettings": {
+    "nil": {
+      "formatting": {
+        "command": [
+          "nixfmt"
+        ]
+      }
+    }
+  }
+}

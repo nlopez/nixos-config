@@ -23,15 +23,17 @@ in
       useGlobalPkgs = true;
       useUserPackages = true;
       backupFileExtension = "backup";
-      users.nixos = {
-        imports = [
-          homeManager.base
-          homeManager.git
-          homeManager.shell
-        ]
-        ++ lib.optionals (lib.attrByPath [ "wsl" "enable" ] false config) [ homeManager.gitWsl ];
-        home.stateVersion = "25.11";
-      };
+      users.nixos =
+        { osConfig, ... }:
+        {
+          imports = [
+            homeManager.base
+            homeManager.git
+            homeManager.shell
+          ]
+          ++ lib.optionals osConfig.wsl.enable [ homeManager.gitWsl ];
+          home.stateVersion = "25.11";
+        };
     };
 
     nixpkgs.hostPlatform = "x86_64-linux";

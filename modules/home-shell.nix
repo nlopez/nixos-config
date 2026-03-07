@@ -2,6 +2,7 @@
 { ... }:
 {
   flake.modules.homeManager.shell = {
+    home.shell.enableZshIntegration = true;
     programs.zsh = {
       enable = true;
       enableCompletion = true;
@@ -20,10 +21,34 @@
           grhh = "git reset --hard HEAD";
           gst = "git status";
           gup = "git pull --rebase";
+          gconf = "git config --list --show-origin --show-scope --includes";
         };
       };
     };
 
     programs.starship.enable = true;
+
+    programs.atuin = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
+    programs.direnv = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
+    programs.fzf = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
+    programs.zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+      options = [ "--cmd cd" ];
+    };
+
+    programs.bat.enable = true;
   };
 }
