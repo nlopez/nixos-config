@@ -31,7 +31,10 @@ in
             homeManager.git
             homeManager.shell
           ]
-          ++ lib.optionals osConfig.wsl.enable [ homeManager.gitWsl ];
+          ++ lib.optionals osConfig.wsl.enable [
+            homeManager.gitWsl
+            homeManager.shellWsl
+          ];
           home.stateVersion = "25.11";
         };
     };

@@ -50,5 +50,19 @@
     };
 
     programs.bat.enable = true;
+
+    programs.tmux = {
+      enable = true;
+      mouse = true;
+      sensibleOnTop = true; # https://github.com/tmux-plugins/tmux-sensible
+      clock24 = true;
+    };
+  };
+
+  flake.modules.homeManager.shellWsl = {
+    programs.zsh.shellAliases = {
+      ssh = "ssh.exe";
+      op = "op.exe";
+    };
   };
 }

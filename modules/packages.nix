@@ -32,10 +32,6 @@
         vimAlias = true;
       };
 
-      programs.tmux = {
-        enable = true;
-      };
-
       # https://nix-community.github.io/NixOS-WSL/how-to/vscode.html
       programs.nix-ld.enable = true;
 

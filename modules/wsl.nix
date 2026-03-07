@@ -11,6 +11,7 @@
 
       # Integrate with Docker Desktop on Windows
       wsl.docker-desktop.enable = true;
+
       programs.zsh.enable = true;
 
       users.users.nixos = {
