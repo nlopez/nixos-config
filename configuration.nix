@@ -19,6 +19,9 @@
     vimAlias = true;
   };
 
+  # https://nix-community.github.io/NixOS-WSL/how-to/vscode.html
+  programs.nix-ld.enable = true;
+
   wsl.enable = true;
   wsl.defaultUser = "nixos";
   wsl.wslConf.network.generateHosts = false;
