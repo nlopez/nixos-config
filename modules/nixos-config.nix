@@ -27,9 +27,7 @@ in
         { osConfig, ... }:
         {
           imports = [
-            homeManager.base
-            homeManager.git
-            homeManager.shell
+            config.configurations.home.nixos.module
           ]
           ++ lib.optionals osConfig.wsl.enable [
             homeManager.gitWsl

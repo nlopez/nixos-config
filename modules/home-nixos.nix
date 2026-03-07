@@ -11,6 +11,7 @@ in
       imports = [
         homeManager.base
         homeManager.git
+        homeManager.kubernetes
         homeManager.shell
       ];
     };
