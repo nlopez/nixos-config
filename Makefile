@@ -5,3 +5,4 @@ switch:
 .PHONY: clean
 clean:
 	nix-collect-garbage -d
+	rm -rf result
