@@ -16,6 +16,8 @@ in
       nixos.wsl
       nixos.packages
       nixos.networking
+      nixos.tailscale
+      nixos.docker
     ];
 
     # Configure home-manager as a NixOS module
@@ -45,6 +47,12 @@ in
       ];
 
     time.timeZone = "UTC";
+
+    # User group memberships
+    users.users.nixos.extraGroups = [ "docker" ];
+
+    # Tailscale configuration for the nixos user
+    services.tailscale.extraSetFlags = [ "--operator=nixos" ];
 
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions

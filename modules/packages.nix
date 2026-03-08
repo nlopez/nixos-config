@@ -15,9 +15,9 @@
           nil # nix language server
           nixfmt
           ripgrep
-          tailscale
           trash-cli
           tree
+          tzdata
           uv
           wget
           yq

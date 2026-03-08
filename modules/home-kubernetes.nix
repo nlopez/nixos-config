@@ -2,7 +2,12 @@
 { ... }:
 {
   flake.modules.homeManager.kubernetes =
-    { pkgs, ... }:
+    {
+      config,
+      lib,
+      pkgs,
+      ...
+    }:
     {
       home.packages = builtins.attrValues {
         inherit (pkgs)
@@ -11,6 +16,10 @@
           kubectl
           kubectx
           ;
+      };
+
+      programs.zsh.zsh-abbr.abbreviations = lib.mkIf config.programs.zsh.zsh-abbr.enable {
+        k = "kubectl";
       };
     };
 }
