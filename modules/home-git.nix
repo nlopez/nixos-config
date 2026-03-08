@@ -36,7 +36,7 @@
   flake.modules.homeManager.gitWsl = {
     programs.git.settings = {
       core.sshCommand = "ssh.exe";
-      credential.helper = "git-credential-manager.exe";
+      credential.helper = "manager.exe";
       gpg.ssh.program = "op-ssh-sign-wsl.exe";
     };
   };
